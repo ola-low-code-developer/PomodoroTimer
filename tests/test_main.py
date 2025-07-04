@@ -1,3 +1,4 @@
+import unittest.mock
 import unittest
 import tkinter as tk
 from app.ui import PomodoroApp
@@ -43,11 +44,11 @@ class TestPomodoroApp(unittest.TestCase):
         self.assertEqual(self.app.break_duration, 10 * 60)
 
     @patch("tkinter.messagebox.showinfo")
-    @patch("tkinter.Tk.after")
+    @unittest.mock.patch("tkinter.Tk.after")
     def test_timer_ends_work_session(
         self,
-        mock_after: "unittest.mock.Mock",
-        mock_showinfo: "unittest.mock.Mock",
+        mock_after: unittest.mock.MagicMock,
+        mock_showinfo: unittest.mock.MagicMock,
     ) -> None:
         self.app.remaining_time = 0
         self.app.update_timer()
@@ -58,11 +59,11 @@ class TestPomodoroApp(unittest.TestCase):
         self.assertEqual(self.app.remaining_time, self.app.break_duration)
 
     @patch("tkinter.messagebox.showinfo")
-    @patch("tkinter.Tk.after")
+    @unittest.mock.patch("tkinter.Tk.after")
     def test_timer_ends_break_session(
         self,
-        mock_after: "unittest.mock.Mock",
-        mock_showinfo: "unittest.mock.Mock",
+        mock_after: unittest.mock.MagicMock,
+        mock_showinfo: unittest.mock.MagicMock,
     ) -> None:
         self.app.is_work_time = False
         self.app.remaining_time = 0
