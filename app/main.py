@@ -1,10 +1,15 @@
 import tkinter as tk
 from app.ui import PomodoroApp
 
-def main():
+
+def main() -> None:
+    """
+    Initializes and runs the Pomodoro timer application.
+    """
     root = tk.Tk()
-    app = PomodoroApp(root)
+    PomodoroApp(root)
     root.mainloop()
+
 
 if __name__ == "__main__":
     main()

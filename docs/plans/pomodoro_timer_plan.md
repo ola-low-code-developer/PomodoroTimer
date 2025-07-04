@@ -52,3 +52,7 @@
 ### Testing Strategy
 
 *The feature was tested using a combination of unit tests and manual testing. The unit tests in `tests/test_main.py` cover the core timer logic, including starting, stopping, resetting, and setting custom durations. To test the timer's behavior at the end of a session without relying on the `tkinter` main loop, the `tkinter.Tk.after` method was patched. This allowed for the verification of the timer's state transitions and the display of notifications in a controlled and predictable manner. Manual testing was used to verify the overall user experience and the visual aspects of the GUI.*
+
+### Code Quality
+
+*Code quality is maintained through the use of `black` for formatting, `ruff` for linting, and `mypy` for static type checking. These checks are enforced using pre-commit hooks.*

@@ -5,7 +5,7 @@ from tkinter import messagebox
 class PomodoroApp:
     """A Pomodoro timer application built with tkinter."""
 
-    def __init__(self, root):
+    def __init__(self, root: tk.Tk) -> None:
         """
         Initializes the PomodoroApp.
 
@@ -63,15 +63,15 @@ class PomodoroApp:
         self.work_duration = 25 * 60
         self.break_duration = 5 * 60
         self.remaining_time = self.work_duration
-        self.timer_id = None
+        self.timer_id: str | None = None
 
-    def start_timer(self):
+    def start_timer(self) -> None:
         """Starts the timer if it is not already running."""
         if not self.timer_running:
             self.timer_running = True
             self.update_timer()
 
-    def stop_timer(self):
+    def stop_timer(self) -> None:
         """Stops the timer if it is running."""
         if self.timer_running:
             self.timer_running = False
@@ -79,14 +79,14 @@ class PomodoroApp:
                 self.root.after_cancel(self.timer_id)
                 self.timer_id = None
 
-    def reset_timer(self):
+    def reset_timer(self) -> None:
         """Resets the timer to the initial work session state."""
         self.stop_timer()
         self.is_work_time = True
         self.remaining_time = self.work_duration
         self.update_display()
 
-    def set_durations(self):
+    def set_durations(self) -> None:
         """Sets the work and break durations from the input fields."""
         try:
             self.work_duration = int(self.work_minutes.get()) * 60
@@ -97,7 +97,7 @@ class PomodoroApp:
                 "Invalid Input", "Please enter valid numbers for minutes."
             )
 
-    def update_timer(self):
+    def update_timer(self) -> None:
         """
         Updates the timer every second.
 
@@ -122,8 +122,7 @@ class PomodoroApp:
             # The timer will be started by the user after the message box is closed.
             # self.start_timer()
 
-    def update_display(self):
+    def update_display(self) -> None:
         """Updates the timer display with the remaining time."""
         mins, secs = divmod(self.remaining_time, 60)
         self.timer_label.config(text=f"{mins:02d}:{secs:02d}")
-

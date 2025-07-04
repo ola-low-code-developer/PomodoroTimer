@@ -1,0 +1,5 @@
+# Development dependencies
+black
+ruff
+mypy
+pre-commit

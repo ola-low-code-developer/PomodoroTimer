@@ -45,3 +45,7 @@
 ### Testing Strategy
 
 *How the feature will be tested, including unit tests, integration tests, and manual testing.*
+
+### Code Quality
+
+*How code quality will be maintained, including linters, formatters, and pre-commit hooks.*
