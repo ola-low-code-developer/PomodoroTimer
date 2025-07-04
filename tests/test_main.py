@@ -46,8 +46,8 @@ class TestPomodoroApp(unittest.TestCase):
     @patch("tkinter.Tk.after")
     def test_timer_ends_work_session(
         self,
-        mock_after: unittest.mock.MagicMock,
-        mock_showinfo: unittest.mock.MagicMock,
+        mock_after: "unittest.mock.Mock",
+        mock_showinfo: "unittest.mock.Mock",
     ) -> None:
         self.app.remaining_time = 0
         self.app.update_timer()
@@ -61,8 +61,8 @@ class TestPomodoroApp(unittest.TestCase):
     @patch("tkinter.Tk.after")
     def test_timer_ends_break_session(
         self,
-        mock_after: unittest.mock.MagicMock,
-        mock_showinfo: unittest.mock.MagicMock,
+        mock_after: "unittest.mock.Mock",
+        mock_showinfo: "unittest.mock.Mock",
     ) -> None:
         self.app.is_work_time = False
         self.app.remaining_time = 0
