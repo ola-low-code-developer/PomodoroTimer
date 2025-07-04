@@ -1,0 +1,18 @@
+# Gemini CLI configuration file
+
+# Project settings
+project_name: "GeminiCLI-1"
+version: "0.1.0"
+
+# Model settings
+# The model to use for generating responses.
+# See https://ai.google.dev/models/gemini for a list of available models.
+default_model: "gemini-1.5-pro"
+
+# The temperature to use for generating responses.
+# A higher temperature will result in more creative responses, while a lower
+# temperature will result in more predictable responses.
+temperature: 0.7
+
+# The maximum number of tokens to generate in a response.
+max_tokens: 2048

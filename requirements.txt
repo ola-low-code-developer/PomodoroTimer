@@ -1,0 +1,2 @@
+# This file is used to list the project's dependencies.
+# This project currently has no external dependencies as it only uses the standard Python library (tkinter).
