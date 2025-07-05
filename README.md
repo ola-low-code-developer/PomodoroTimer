@@ -47,8 +47,10 @@ It is recommended to use a virtual environment to run this project.
 To run the application, execute the following command from the root directory of the project:
 
 ```bash
-python -m app.main
+python -m app.main [--debug]
 ```
+
+Use the `--debug` flag to enable debug logging, which will show more detailed output in the console.
 
 ### Running Tests
 
