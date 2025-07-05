@@ -1,3 +1,4 @@
+import logging
 import tkinter as tk
 from tkinter import messagebox
 
@@ -69,6 +70,7 @@ class PomodoroApp:
         """Starts the timer if it is not already running."""
         if not self.timer_running:
             self.timer_running = True
+            logging.info("Timer started.")
             self.update_timer()
 
     def stop_timer(self) -> None:
@@ -78,6 +80,7 @@ class PomodoroApp:
             if self.timer_id:
                 self.root.after_cancel(self.timer_id)
                 self.timer_id = None
+            logging.info("Timer stopped.")
 
     def reset_timer(self) -> None:
         """Resets the timer to the initial work session state."""
@@ -85,6 +88,7 @@ class PomodoroApp:
         self.is_work_time = True
         self.remaining_time = self.work_duration
         self.update_display()
+        logging.info("Timer reset.")
 
     def set_durations(self) -> None:
         """Sets the work and break durations from the input fields."""
@@ -93,6 +97,7 @@ class PomodoroApp:
             self.break_duration = int(self.break_minutes.get()) * 60
             self.reset_timer()
         except ValueError:
+            logging.error("Invalid Input: Please enter valid numbers for minutes.")
             messagebox.showerror(
                 "Invalid Input", "Please enter valid numbers for minutes."
             )
@@ -106,15 +111,20 @@ class PomodoroApp:
         if self.remaining_time > 0:
             self.remaining_time -= 1
             self.update_display()
+            logging.debug(
+                f"Time remaining: {self.remaining_time // 60:02d}:{self.remaining_time % 60:02d}"
+            )
             self.timer_id = self.root.after(1000, self.update_timer)
         else:
             self.timer_running = False
             self.is_work_time = not self.is_work_time
             if self.is_work_time:
                 self.remaining_time = self.work_duration
+                logging.info("Break's over! Starting work session.")
                 messagebox.showinfo("Pomodoro Timer", "Break's over! Time to work.")
             else:
                 self.remaining_time = self.break_duration
+                logging.info("Work session over! Starting break.")
                 messagebox.showinfo(
                     "Pomodoro Timer", "Work session is over! Time for a break."
                 )
