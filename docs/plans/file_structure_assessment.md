@@ -5,7 +5,7 @@ This document assesses the current file and folder structure of the Pomodoro Tim
 ## Current Structure Overview
 
 ```
-C:/Users/OlaWintzell/Programming/GeminiCLI-1/
+HOME/Programming/Project/
 ├── .gitignore
 ├── .pre-commit-config.yaml
 ├── LICENSE

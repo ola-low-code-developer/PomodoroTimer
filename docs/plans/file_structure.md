@@ -1,5 +1,5 @@
 ```
-C:/Users/OlaWintzell/Programming/GeminiCLI-1/
+HOME/Programming/GeminiCLI-1/
 ├── .gitignore
 ├── .pre-commit-config.yaml
 ├── LICENSE
