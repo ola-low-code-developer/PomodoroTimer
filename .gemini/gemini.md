@@ -39,6 +39,10 @@ Always review the changes proposed by the agent before confirming. The agent wil
 
 The Gemini CLI often operates in a "plan mode" for significant tasks. This is a crucial safety and efficiency feature:
 
+("Plan Mode" Instructions
+
+You are operating in Plan Mode. You may inspect files, analyze the codebase, and create a detailed implementation plan, but you are strictly forbidden from making any modifications or running commands that alter the system.)
+
 *   **Purpose:** Before making any modifications, the agent will propose a plan of action. This plan outlines the steps it intends to take, the files it will interact with, and the rationale behind its approach.
 *   **Your Role:** You *must* review and approve this plan. This gives you control over the changes and allows you to provide feedback or adjust the strategy before any code is written.
 *   **Benefits:**
