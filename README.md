@@ -12,6 +12,12 @@ The Pomodoro Technique is a time management method that uses a timer to break do
 *   **Simple Interface:** An easy-to-use graphical user interface.
 *   **Notifications:** Get notified when a work or break session is over.
 
+## Logging
+
+The application uses Python's built-in `logging` module for outputting information, debugging messages, and errors. By default, the logging level is set to `INFO`, meaning informational messages, warnings, and errors will be displayed in the console.
+
+To change the logging level (e.g., to see `DEBUG` messages), you can modify the `level` parameter in `logging.basicConfig()` in `app/main.py`.
+
 ## Getting Started
 
 ### Prerequisites
